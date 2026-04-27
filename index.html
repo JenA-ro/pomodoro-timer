@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
   <title>Catodoro</title>
 </head>
 <body>
@@ -13,21 +14,25 @@
   <div class="pom-container">
     <div class="navbar">
       <ul class="tabs">
-        <li><a href="a">Pomodoro</a></li>
+        <!-- <li><a href="a">Pomodoro</a></li>
         <li><a href="b">Break</a></li>
-        <li><a href="c">Intervals</a></li>
+        <li><a href="c">Intervals</a></li> -->
+        <li data-tab-target="#timer">Pomodoro</li>
+        <li data-tab-target="#break">Break</li>
+        <li data-tab-target="#interval">Intervals</li>
       </ul>
     </div>
 
     <div class="unit">
-      <p id="timer">25:00</p>
-      <p id="break">5:00</p>
-      <input type="number" min="1" max="10" value="1">
-    </div>
+      <p id="timer" data-tab-content>25:00</p>
+      <p id="break" data-tab-content>5:00</p>
+      <input type="number" min="1" max="10" value="1" id="interval" data-tab-content>
 
+    </div>
+    <p>Interval:</p>
     <div class="btn-container">
       <button id="start-btn" class="btns">Start</button>
-      <button id="stop-btn" class="btns">Stop</button>
+      <button id="stop-btn" class="btns" >Stop</button>
       <button id="reset-btn" class="btns">Reset</button>
     </div>
   </div>

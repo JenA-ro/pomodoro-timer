@@ -54,6 +54,13 @@ input {
   border:none;
   padding:15px;
   border-radius: 4px;
+  font-size: 24px;
 
   cursor: pointer;
+}
+#stop-btn{
+  display: none;
+}
+#reset-btn{
+  display:none;
 }

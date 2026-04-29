@@ -1,14 +1,16 @@
 const tabs = document.querySelectorAll("[data-tab-target]"); 
 const tabContent = document.querySelectorAll("[data-tab-content]");
 // time variables
-const minutes = 25;
+const minutes = 0.1;
 let time = minutes * 60;
 const countdown = document.getElementById('timer');
-//buttons
+// buttons
 const startBtn = document.getElementById('start-btn');
 const stopBtn = document.getElementById('stop-btn');
 const resetBtn = document.getElementById('reset-btn');
 const resumeBtn = document.getElementById('resume-btn');
+// interval text
+const interval = document.getElementById('interval-text');
 
 // Function: allows tab (li tag) to be clicked and switch to that clicked tab 
 tabs.forEach(tab => {
@@ -24,10 +26,11 @@ tabs.forEach(tab => {
     target.classList.add('active')
   })
 });
-
 //later: make sure start button can only start on Pomodoro or Break tab
 
 let timeID;
+// let time_left;
+
 //Timer functions
 //Function: countdown timer for Pomodoro
 function pomodoroCountdown() {
@@ -39,8 +42,12 @@ function pomodoroCountdown() {
 
   countdown.innerHTML = `${minutes}:${seconds}`;
   time--;
+  if (time < 0) { // time stops at 0:00
+    clearInterval(timeID);
+    interval.innerHTML='yay!' // test
+  }
 };
-//Function: start button to start pomodoro countdown timer
+// Function: start button to start pomodoro countdown timer
 startBtn.addEventListener('click', (event) => {
   timeID = setInterval(pomodoroCountdown, 1000);
   startBtn.style.display = 'none';
@@ -49,27 +56,23 @@ startBtn.addEventListener('click', (event) => {
 
 });
 
-//Function: pause timer
-// if pause, make pause button hidden and display resume button
-let paused = false;
-let time_left;
+// Function: pause Pomodoro timer
+// Post: if paused, make pause button hidden and display resume button
 stopBtn.onclick = pause_clock;
 function pause_clock() {
-  // if (!paused) {
-  //   paused = true;
   clearInterval(timeID);
   resumeBtn.style.display = 'block';
   stopBtn.style.display = 'none';
     // save time left
-  }
-// }
+}
 
+// Function: resume Pomodoro timer
+// Post: if resumed, make resume button hidden and display pause button
 resumeBtn.onclick = resume_clock;
 function resume_clock() {
   timeID = setInterval(pomodoroCountdown, 1000);
   resumeBtn.style.display = 'none';
   stopBtn.style.display = 'block';
-  
 }
 
 //Function: reset timer

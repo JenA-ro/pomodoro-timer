@@ -14,9 +14,6 @@
   <div class="pom-container">
     <div class="navbar">
       <ul class="tabs">
-        <!-- <li><a href="a">Pomodoro</a></li>
-        <li><a href="b">Break</a></li>
-        <li><a href="c">Intervals</a></li> -->
         <li data-tab-target="#timer" class="curr-tab">Pomodoro</li>
         <li data-tab-target="#break" class="tab">Break</li>
         <li data-tab-target="#interval" class="tab">Intervals</li>
@@ -24,15 +21,16 @@
     </div>
 
     <div class="unit">
-      <p id="timer" data-tab-content>25:00</p>
+      <p id="timer" data-tab-content class="active">25:00</p>
       <p id="break" data-tab-content>5:00</p>
       <input type="number" min="1" max="10" value="1" id="interval" data-tab-content>
 
     </div>
-    <p>Interval:</p>
+    <p>Interval: 1</p>
     <div class="btn-container">
       <button id="start-btn" class="btns">Start</button>
       <button id="stop-btn" class="btns" >Stop</button>
+      <button id="resume-btn" class="btns">Resume</button>
       <button id="reset-btn" class="btns">Reset</button>
     </div>
   </div>

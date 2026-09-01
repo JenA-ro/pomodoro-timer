@@ -14,8 +14,8 @@
   <header>
     <h1 id="header-title">Pomotato</h1>
     <div class="header-buttons">
-      <button id="music-btn">
-        <svg class="music-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Remix Icon by Remix Design - https://github.com/cyberalien/RemixIcon/blob/master/License --><path fill="currentColor" d="M20 3v14a4 4 0 1 1-2-3.465V6H9v11a4 4 0 1 1-2-3.465V3z"/></svg>
+      <button id="sound-btn" type="submit" onclick="openPopup()">
+        <svg class="sound-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Remix Icon by Remix Design - https://github.com/cyberalien/RemixIcon/blob/master/License --><path fill="currentColor" d="M20 3v14a4 4 0 1 1-2-3.465V6H9v11a4 4 0 1 1-2-3.465V3z"/></svg>
       </button>
       <button id="task-btn">
         <svg class="task-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Remix Icon by Remix Design - https://github.com/cyberalien/RemixIcon/blob/master/License --><path fill="currentColor" d="M8 4h13v2H8zm-5-.5h3v3H3zm0 7h3v3H3zm0 7h3v3H3zM8 11h13v2H8zm0 7h13v2H8z"/></svg>
@@ -28,6 +28,34 @@
     </div>
   </header>
   
+  <!-- Sound Popup -->
+  <!-- Pause button: ⏸ -->
+  <div class="sound-popup" id="sound-popup">
+    <h2>Sounds</h2>
+    <ul class="sound-list">
+      <li>
+        <button class="play-btn" id="brown-noise-btn">▶</button> 
+        <span>Brown Noise</span>
+        <input type="range">
+      </li>
+      <li>
+        <button class="play-btn" id="green-noise-btn">▶</button>
+        <span>Green Noise</span>
+        <input type="range">
+      </li>
+      <li>
+        <button class="play-btn" id="pink-noise-btn">▶</button>
+        <span>Pink Noise</span>
+        <input type="range">
+      </li>
+      <li>
+        <button class="play-btn" id="white-noise-btn">▶</button>
+        <span>White Noise</span>
+        <input type="range">
+      </li>
+    </ul>
+    <button id="close-sound-popup" type="submit" onclick="closePopup()">Close</button>
+  </div>
 
   <!-- Pomodoro Container -->
   <div class="pom-container">

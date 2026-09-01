@@ -1,7 +1,7 @@
 const tabs = document.querySelectorAll("[data-tab-target]"); 
 const tabContent = document.querySelectorAll("[data-tab-content]");
 // time variables
-const minutes = 0.1;
+const minutes = 0.1; // change to 25 later, use 0.1 (6 sec) for testing
 let time = minutes * 60;
 const countdown = document.getElementById('timer');
 // buttons
@@ -11,6 +11,8 @@ const resetBtn = document.getElementById('reset-btn');
 const resumeBtn = document.getElementById('resume-btn');
 // interval text
 const interval = document.getElementById('interval-text');
+// header buttons
+const sound_popup = document.getElementById("sound-popup");
 
 // Function: allows tab (li tag) to be clicked and switch to that clicked tab 
 tabs.forEach(tab => {
@@ -26,7 +28,7 @@ tabs.forEach(tab => {
     target.classList.add('active')
   })
 });
-//later: make sure start button can only start on Pomodoro or Break tab
+                                        //later: make sure start button can only start on Pomodoro or Break tab
 
 let timeID;
 // let time_left;
@@ -44,7 +46,6 @@ function pomodoroCountdown() {
   time--;
   if (time < 0) { // time stops at 0:00
     clearInterval(timeID);
-    interval.innerHTML='yay!' // test
   }
 };
 // Function: start button to start pomodoro countdown timer
@@ -84,3 +85,14 @@ function resume_clock() {
 //   minutes = 25;
 //   countdown.innerHTML = '25:00';
 // })
+
+
+// Open sound popup
+function openPopup() {
+  sound_popup.classList.add("openPopup");
+}
+
+// Close sound popup
+function closePopup() {
+  sound_popup.classList.remove("openPopup");
+}

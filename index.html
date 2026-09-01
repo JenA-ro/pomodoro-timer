@@ -30,32 +30,34 @@
   
   <!-- Sound Popup -->
   <!-- Pause button: ⏸ -->
-  <div class="sound-popup" id="sound-popup">
-    <h2>Sounds</h2>
-    <ul class="sound-list">
-      <li>
-        <button class="play-btn" id="brown-noise-btn">▶</button> 
-        <span>Brown Noise</span>
-        <input type="range">
-      </li>
-      <li>
-        <button class="play-btn" id="green-noise-btn">▶</button>
-        <span>Green Noise</span>
-        <input type="range">
-      </li>
-      <li>
-        <button class="play-btn" id="pink-noise-btn">▶</button>
-        <span>Pink Noise</span>
-        <input type="range">
-      </li>
-      <li>
-        <button class="play-btn" id="white-noise-btn">▶</button>
-        <span>White Noise</span>
-        <input type="range">
-      </li>
-    </ul>
-    <button id="close-sound-popup" type="submit" onclick="closePopup()">Close</button>
-  </div>
+  <div class="popup-container">
+    <div class="sound-popup" id="sound-popup">
+      <h2>Sounds</h2>
+      <ul class="sound-list">
+        <li>
+          <button class="play-btn" id="brown-noise-btn">▶</button> 
+          <span>Brown Noise</span>
+          <input type="range">
+        </li>
+        <li>
+          <button class="play-btn" id="green-noise-btn">▶</button>
+          <span>Green Noise</span>
+          <input type="range">
+        </li>
+        <li>
+          <button class="play-btn" id="pink-noise-btn">▶</button>
+          <span>Pink Noise</span>
+          <input type="range">
+        </li>
+        <li>
+          <button class="play-btn" id="white-noise-btn">▶</button>
+          <span>White Noise</span>
+          <input type="range">
+        </li>
+      </ul>
+      <button id="close-sound-popup" type="submit" onclick="closePopup()">Close</button>
+    </div>
+</div>
 
   <!-- Pomodoro Container -->
   <div class="pom-container">

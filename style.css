@@ -54,7 +54,7 @@ header {
 
 
 /* sound window */
-.popup {
+.sound-popup {
   flex-wrap: wrap;
   border: 1px solid black;
   border-radius: 6px;
@@ -74,6 +74,7 @@ h2 {
   visibility: visible;
   transform: translate(-50%, -50%);
 }
+
 
 /* body yody */
 body {

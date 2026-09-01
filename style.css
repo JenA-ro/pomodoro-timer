@@ -1,3 +1,50 @@
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid grey;
+  margin-bottom: 30px;
+}
+#header-title {
+  font-family: "Irish Grover", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #4B2E2B;
+}
+.header-buttons {
+  margin-left: 10%;
+  display: flex;
+  gap: 5px;
+}
+#music-btn {
+  background-color: #8C5A3C;
+  border-radius: 10px;
+  border: 1px solid #4B2E2B;
+  border-bottom: 3px solid #4B2E2B;
+  cursor: pointer;
+}
+#task-btn {
+  background-color:  #8C5A3C;
+  border-radius: 10px;
+  border: 1px solid #4B2E2B;
+  border-bottom: 3px solid #4B2E2B;
+  cursor: pointer;
+}
+#sign-in-btn {
+  background-color: #FFF8F0;
+  border-radius: 10px;
+  border: 1px solid #C08552;
+  border-bottom: 3px solid #C08552;
+  cursor: pointer;
+}
+.music-icon {
+  color: #FFF8F0;
+
+}
+.task-icon{ 
+   color: #FFF8F0;
+}
 body {
   background-color: rgb(208, 235, 249);
 }
@@ -9,6 +56,10 @@ h1 {
 [data-tab-content] {
   display: none;
 }
+.active[data-tab-content] {
+  display: block;
+}
+
 /* container */
 .pom-container {
   background-color: rgb(138, 184, 207);
@@ -79,4 +130,7 @@ input {
 }
 #reset-btn{
   display:none;
+}
+#resume-btn {
+  display: none;
 }

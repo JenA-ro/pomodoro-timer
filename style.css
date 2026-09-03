@@ -58,22 +58,33 @@ header {
   position: absolute;
   inset: 0;
   background: (0, 0, 0, 0.4);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(8px);
 }
 .overlay.active {
   display: block;
 }
 /* sound window */
+#sound-title {
+  font-family: "Irish Grover", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #4B2E2B;
+  padding-left: 20px;
+}
 .sound-popup {
-  flex-wrap: wrap;
-  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #8C5A3C;
   border-radius: 6px;
   background-color: #FFF8F0;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
+  width: 30vw;
+  height: 60vh;
+  min-width: 400px;
+  min-height: 600px;
   visibility: hidden;
 }
 h2 {
@@ -83,6 +94,41 @@ h2 {
   top: 50%;
   visibility: visible;
   transform: translate(-50%, -50%);
+}
+.sound-list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.play-btn {
+  background-color: #8C5A3C;
+  border-radius: 6px;
+  border:1px solid #4B2E2B;
+  border-bottom: 3px solid #4B2E2B;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#close-sound-popup {
+  align-self: flex-start;
+  /* margin-top: auto; */
+  margin: 20px;
+  background-color: #8C5A3C;
+  border-radius: 6px;
+  border:1px solid #4B2E2B;
+  border-bottom: 3px solid #4B2E2B;
+  color:#FFF8F0;
+  cursor: pointer;
+  padding: 8px 24px;
+}
+
+.line {
+  border-bottom: 1px solid  gray;
+  margin-top: 10px;
+  margin-right: 10px;
+  width: 90%;
 }
 
 

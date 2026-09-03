@@ -13,8 +13,12 @@ const resumeBtn = document.getElementById('resume-btn');
 const interval = document.getElementById('interval-text');
 // header buttons
 const soundBtn = document.getElementById("sound-btn");
-// popup
+// popup and popup buttons
 const sound_popup = document.getElementById("sound-popup");
+const brownNoiseBtn = document.getElementById("brown-noise-btn");
+const greenNoiseBtn = document.getElementById("green-noise-btn");
+const pinkNoiseBtn = document.getElementById("pink-noise-btn");
+const whiteNoiseBtn = document.getElementById("white-noise-btn");
 const closeBtn = document.getElementById("close-sound-popup");
 // blur overlay
 const overlay = document.getElementById("overlay");
@@ -34,10 +38,8 @@ tabs.forEach(tab => {
   })
 });
                                         //later: make sure start button can only start on Pomodoro or Break tab
-
 let timeID;
 // let time_left;
-
 //Timer functions
 //Function: countdown timer for Pomodoro
 function pomodoroCountdown() {
@@ -61,7 +63,6 @@ startBtn.addEventListener('click', (event) => {
   resetBtn.style.display = 'block';
 
 });
-
 // Function: pause Pomodoro timer
 // Post: if paused, make pause button hidden and display resume button
 stopBtn.onclick = pause_clock;
@@ -71,7 +72,6 @@ function pause_clock() {
   stopBtn.style.display = 'none';
     // save time left
 }
-
 // Function: resume Pomodoro timer
 // Post: if resumed, make resume button hidden and display pause button
 resumeBtn.onclick = resume_clock;
@@ -91,6 +91,30 @@ function resume_clock() {
 //   countdown.innerHTML = '25:00';
 // })
 
+
+
+const brownNoiseAudio = document.getElementById("brown-noise-audio");
+// Noise buttons
+brownNoiseBtn.onclick = playBrownNoise;
+let play =  false;
+/* If brown noise button is clicked when paused, then play false true 
+(shows play button when paused or didn't start yet)
+If brown noise button is clicked when playing, 
+then play turns false (shows pause button when playing) */
+function playBrownNoise() {
+  if (!play) {
+    brownNoiseBtn.textContent = "⏸";
+    console.log("playing");
+    play = true;
+    brownNoiseAudio.play();
+  }
+  else {
+    brownNoiseBtn.textContent = "▶";
+    console.log("paused");
+    play = false;
+    brownNoiseAudio.pause();
+  }
+}
 
 // Open sound popup
 soundBtn.onclick = openPopup;

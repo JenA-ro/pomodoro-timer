@@ -21,7 +21,6 @@
         <svg class="task-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Remix Icon by Remix Design - https://github.com/cyberalien/RemixIcon/blob/master/License --><path fill="currentColor" d="M8 4h13v2H8zm-5-.5h3v3H3zm0 7h3v3H3zm0 7h3v3H3zM8 11h13v2H8zm0 7h13v2H8z"/></svg>
       </button>
       <button id="sign-in-btn">
-
         <svg class="sign-in-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Remix Icon by Remix Design - https://github.com/cyberalien/RemixIcon/blob/master/License --><path fill="currentColor" d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12S6.48 2 12 2M6.023 15.416C7.491 17.606 9.695 19 12.16 19s4.669-1.393 6.136-3.584A8.97 8.97 0 0 0 12.16 13a8.97 8.97 0 0 0-6.137 2.416M12 11a3 3 0 1 0 0-6a3 3 0 0 0 0 6"/></svg>
         Sign in
       </button>
@@ -31,36 +30,35 @@
   <!-- blurred background  -->
   <div class="overlay" id="overlay"></div>
 
+  <audio id="brown-noise-audio" src="171552__georgedyer__01-brown-noise.mp3" loop></audio>
   <!-- Sound Popup -->
   <!-- Pause button: ⏸ -->
-  <div class="popup-container">
-    <div class="sound-popup" id="sound-popup">
-      <h2>Sounds</h2>
-      <ul class="sound-list">
-        <li>
-          <button class="play-btn" id="brown-noise-btn">▶</button> 
-          <span>Brown Noise</span>
-          <input type="range">
-        </li>
-        <li>
-          <button class="play-btn" id="green-noise-btn">▶</button>
-          <span>Green Noise</span>
-          <input type="range">
-        </li>
-        <li>
-          <button class="play-btn" id="pink-noise-btn">▶</button>
-          <span>Pink Noise</span>
-          <input type="range">
-        </li>
-        <li>
-          <button class="play-btn" id="white-noise-btn">▶</button>
-          <span>White Noise</span>
-          <input type="range">
-        </li>
-      </ul>
-      <button id="close-sound-popup" type="submit">Close</button>
-    </div>
-</div>
+  <div class="sound-popup" id="sound-popup">
+    <h2 id="sound-title">Sounds</h2>
+    <ul class="sound-list">
+      <li>
+        <button class="play-btn" id="brown-noise-btn">▶</button> 
+        <span>Brown Noise</span>
+        <div class="line"></div>
+      </li>
+      <li>
+        <button class="play-btn" id="green-noise-btn">▶</button>
+        <span>Green Noise</span>
+        <div class="line"></div>
+      </li>
+      <li>
+        <button class="play-btn" id="pink-noise-btn">▶</button>
+        <span>Pink Noise</span>
+        <div class="line"></div>
+      </li>
+      <li>
+        <button class="play-btn" id="white-noise-btn">▶</button>
+        <span>White Noise</span>
+        <div class="line"></div>
+      </li>
+    </ul>
+    <button id="close-sound-popup" type="submit">Close</button>
+  </div>
 
   <!-- Pomodoro Container -->
   <div class="pom-container">

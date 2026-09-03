@@ -52,7 +52,17 @@ header {
    color: #FFF8F0;
 }
 
-
+/* blurred background */
+.overlay {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background: (0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+}
+.overlay.active {
+  display: block;
+}
 /* sound window */
 .sound-popup {
   flex-wrap: wrap;

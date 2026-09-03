@@ -12,7 +12,10 @@ const resumeBtn = document.getElementById('resume-btn');
 // interval text
 const interval = document.getElementById('interval-text');
 // header buttons
+const soundBtn = document.getElementById("sound-btn");
+// popup
 const sound_popup = document.getElementById("sound-popup");
+const closeBtn = document.getElementById("close-sound-popup");
 // blur overlay
 const overlay = document.getElementById("overlay");
 
@@ -90,12 +93,14 @@ function resume_clock() {
 
 
 // Open sound popup
+soundBtn.onclick = openPopup;
 function openPopup() {
   sound_popup.classList.add("openPopup");
   overlay.classList.add("active");
 }
 
 // Close sound popup
+closeBtn.onclick = closePopup;
 function closePopup() {
   sound_popup.classList.remove("openPopup");
   overlay.classList.remove("active");

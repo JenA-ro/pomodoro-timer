@@ -1,5 +1,4 @@
 # Potato-Themed Pomodoro Timer
----
 A browser based application design for productivity and focus for users using the Pomodoro technique.
 
 
@@ -17,7 +16,6 @@ A browser based application design for productivity and focus for users using th
 
 
 ## Technologies Used
----
 * JavaScript
 * HTML
 * CSS

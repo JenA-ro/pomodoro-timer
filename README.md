@@ -5,7 +5,6 @@ A browser based application design for productivity and focus for users using th
 
 
 ## Features 
----
 * Pomodoro Timer
 * Ambient background noises:
   * Brown Noise

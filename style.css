@@ -6,15 +6,21 @@ header {
   justify-content: center;
   border-radius: 24px;
   border-bottom: 3px solid #4B2E2B;
-  margin: 0 30% 20px;
+  margin: 0 auto 20px;
   background-color: #FFF8F0;
+  box-sizing: border-box; 
+  width:calc(100% - 60vw);
+  max-width: 100%;
 }
+/* include media for changing header container: make container bigger when window shrinks */
+
 #header-title {
   font-family: "Irish Grover", system-ui;
   font-weight: 400;
   font-style: normal;
   color: #4B2E2B;
   padding-left: 20px;
+  margin-right: auto;
 }
 .header-buttons {
   margin-left: auto;
@@ -110,11 +116,22 @@ h2 {
   cursor: pointer;
   margin-right: 10px;
 }
+#green-noise-btn {
+  background-color: #408c3c;
+}
+#pink-noise-btn {
+  background-color: #8c3c3c;
+}
+#white-noise-btn {
+  background-color: #f2eeee;
+  color: #333333;
+}
 
 #close-sound-popup {
   align-self: flex-start;
   /* margin-top: auto; */
   margin: 20px;
+  margin-top: auto;
   background-color: #8C5A3C;
   border-radius: 6px;
   border:1px solid #4B2E2B;

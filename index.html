@@ -26,15 +26,13 @@
       </button>
     </div>
   </header>
-  
-  <!-- blurred background  -->
+  <!-- Blurred background  -->
   <div class="overlay" id="overlay"></div>
 
-  <audio id="brown-noise-audio" src="171552__georgedyer__01-brown-noise.mp3" loop></audio>
   <!-- Sound Popup -->
   <!-- Pause button: ⏸ -->
-  <div class="sound-popup" id="sound-popup">
-    <h2 id="sound-title">Sounds</h2>
+  <div class="popup" id="sound-popup">
+    <h2 class="popup-title" id="sound-title">Sounds</h2>
     <ul class="sound-list">
       <li>
         <button class="play-btn" id="brown-noise-btn">▶</button> 
@@ -57,8 +55,19 @@
         <div class="line"></div>
       </li>
     </ul>
-    <button id="close-sound-popup" type="submit">Close</button>
+    <button class="close-btns"id="close-sound-popup">Close</button>
   </div>
+  
+  <!-- Task Popup -->
+   <div class="popup" id="task-popup">
+    <h2 class="popup-title" id="task-title">Tasks</h2>
+    <form id="task-form">
+      <input type="text" id="task-input" placeholder="Add Task" autocomplete="off">
+      <!-- <button type="submit" id="add-task-btn">+</button> -->
+    </form>
+    <ul class="task-list" id="task-list"></ul>
+    <button class="close-btns" id="close-task-popup">Close</button>
+   </div>
 
   <!-- Pomodoro Container -->
   <div class="pom-container">

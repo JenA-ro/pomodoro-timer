@@ -13,13 +13,21 @@ const resumeBtn = document.getElementById('resume-btn');
 const interval = document.getElementById('interval-text');
 // header buttons
 const soundBtn = document.getElementById("sound-btn");
-// popup and popup buttons
+const taskBtn = document.getElementById("task-btn");
+// sound popup + buttons
 const sound_popup = document.getElementById("sound-popup");
 const brownNoiseBtn = document.getElementById("brown-noise-btn");
 const greenNoiseBtn = document.getElementById("green-noise-btn");
 const pinkNoiseBtn = document.getElementById("pink-noise-btn");
 const whiteNoiseBtn = document.getElementById("white-noise-btn");
-const closeBtn = document.getElementById("close-sound-popup");
+const closeSoundBtn = document.getElementById("close-sound-popup");
+// task popup + elements
+const task_popup = document.getElementById("task-popup");
+const taskForm = document.getElementById("task-form");
+const taskList = document.getElementById("task-list");
+const taskInput = document.getElementById("task-input");
+const addTaskBtn = document.getElementById("add-task-btn");
+const closeTaskBtn = document.getElementById("close-task-popup");
 // blur overlay
 const overlay = document.getElementById("overlay");
 
@@ -100,17 +108,19 @@ function resume_clock() {
 
 // Sound popup
 // Open sound popup
-soundBtn.onclick = openPopup;
-function openPopup() {
+soundBtn.onclick = openSoundPopup;
+function openSoundPopup() {
   sound_popup.classList.add("openPopup");
   overlay.classList.add("active");
 }
 // Close sound popup
-closeBtn.onclick = closePopup;
-function closePopup() {
+closeSoundBtn.onclick = closeSoundPopup;
+function closeSoundPopup() {
   sound_popup.classList.remove("openPopup");
   overlay.classList.remove("active");
 }
+
+
 
 // Variables for generating and playing noise audio
 let audioContext = null;
@@ -277,3 +287,119 @@ function playPinkNoiseAudio() {
 function playWhiteNoiseAudio() {
   startPlayback("whiteNoise", whiteNoiseBtn);
 }
+
+
+
+
+
+// Task List
+taskBtn.onclick = openTaskPopup;
+function openTaskPopup() {
+  task_popup.classList.add("openPopup");
+  overlay.classList.add("active");
+}
+// Close sound popup
+closeTaskBtn.onclick = closeTaskPopup;
+function closeTaskPopup() {
+  task_popup.classList.remove("openPopup");
+  overlay.classList.remove("active");
+}
+
+
+taskForm.addEventListener("submit", (event) => {
+  event.preventDefault(); // prevents page to refresh
+
+  const taskText = taskInput.value.trim(); // get rid of white space at both ends of string
+  if (taskText === "") return; // return if input is empty
+
+  // Create elements
+  // li
+  const li = document.createElement("li");
+  // checkbox
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  // text span
+  const textSpan = document.createElement("span"); // make text into span
+  textSpan.textContent = taskText;
+  // edit button
+  const editBtn = document.createElement("button");
+  editBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Remix Icon by Remix Design - https://github.com/cyberalien/RemixIcon/blob/master/License --><path fill="currentColor" d="m15.728 9.576l-1.414-1.414L5 17.476v1.414h1.414zm1.414-1.414l1.414-1.414l-1.414-1.414l-1.414 1.414zm-9.9 12.728H3v-4.243L16.435 3.212a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414z"/></svg>`
+  editBtn.className = "edit-btn";
+  // edit input
+  const editInput = document.createElement("input");
+  editInput.type = "text";
+  editInput.className = "edit-input";
+  // delete button
+  const deleteBtn = document.createElement("button");
+  deleteBtn.className = "delete-btn";
+  deleteBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Remix Icon by Remix Design - https://github.com/cyberalien/RemixIcon/blob/master/License --><path fill="currentColor" d="M4 8h16v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1zm2 2v10h12V10zm3 2h2v6H9zm4 0h2v6h-2zM7 5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v2h5v2H2V5zm2-1v1h6V4z"/></svg>`;
+  // line
+  const line = document.createElement("div");
+  line.classList.add("task-li", "line");
+  
+   // container for edit and delete buttons
+  const taskButtons = document.createElement("div");
+  taskButtons.className = "task-buttons";
+
+  // Save edits for task 
+  function saveEdit() {
+    const updatedText = editInput.value.trim();
+
+    if (updatedText !== "") {
+      textSpan.textContent = updatedText;
+    }
+    editBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Remix Icon by Remix Design - https://github.com/cyberalien/RemixIcon/blob/master/License --><path fill="currentColor" d="m15.728 9.576l-1.414-1.414L5 17.476v1.414h1.414zm1.414-1.414l1.414-1.414l-1.414-1.414l-1.414 1.414zm-9.9 12.728H3v-4.243L16.435 3.212a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414z"/></svg>`
+    li.classList.remove("editing");
+  }
+
+  // Event listeners
+  // Check/Uncheck
+  checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+      textSpan.classList.add('completed');
+    } else {
+      textSpan.classList.remove('completed');
+    }
+  });
+  // Edit
+  editBtn.addEventListener('click', () => {
+    const isEditing = li.classList.contains("editing");
+    
+    if (isEditing) {
+      saveEdit();
+    } else {
+      editInput.value = textSpan.textContent;
+      li.classList.add("editing");
+      editInput.focus();
+    }
+  });
+  editInput.addEventListener('keydown', (event) => {
+    if (event.key === "Enter" && li.classList.contains("editing")) {
+      event.preventDefault();
+      saveEdit();
+    }
+  });
+  // Delete task
+  deleteBtn.addEventListener('click', () => {
+    li.remove();
+  });
+
+
+  li.classList.add("task-li"); 
+  // Add the created elements inside <li> tag
+  li.appendChild(checkbox);
+  li.appendChild(textSpan);
+  li.appendChild(editInput);
+  taskButtons.appendChild(editBtn);
+  taskButtons.appendChild(deleteBtn);
+  li.appendChild(taskButtons);
+  li.appendChild(line);
+
+  // Add <li> to <ul>
+  taskList.appendChild(li);
+
+  // Clear input field
+  taskForm.reset();
+
+});
+

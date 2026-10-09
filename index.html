@@ -71,29 +71,39 @@
 
   <!-- Pomodoro Container -->
   <div class="pom-container">
-    <div class="navbar">
-      <ul class="tabs">
-        <li data-tab-target="#timer" class="curr-tab">Pomodoro</li>
-        <li data-tab-target="#break" class="tab">Break</li>
-        <li data-tab-target="#interval" class="tab">Intervals</li>
-      </ul>
-    </div>
-
-    <div class="unit">
-      <p id="timer" data-tab-content class="active">25:00</p>
-      <p id="break" data-tab-content>5:00</p>
-      <input type="number" min="1" max="10" value="1" id="interval" data-tab-content>
-    </div>
-
-    <p id="interval-text">Interval: 1</p>
-
+    <!-- Header Buttons -->
     <div class="btn-container">
+      <button id="pomodoro-btn" class="header-pom-btns">Pomodoro</button>
+      <button id="short-break-btn" class="header-pom-btns">Short Break</button>
+      <button id="long-break-btn" class="header-pom-btns">Long Break</button>
+    </div>
+
+    <div class="pomodoro-timer-container">
+      <h1 id="pomodoro-timer">25:00</h1>
+    </div>
+    <!-- Footer BUttons -->
+    <div class="btn-container">
+      <button id="start-btn" class="footer-pom-btns">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><!-- Icon from Remix Icon by Remix Design - https://github.com/cyberalien/RemixIcon/blob/master/License --><path fill="currentColor" d="M6 20.196V3.804a1 1 0 0 1 1.53-.848l13.113 8.196a1 1 0 0 1 0 1.696L7.53 21.044A1 1 0 0 1 6 20.196"/></svg>
+      </button>
+      <button id="resume-btn" class="footer-pom-btns">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><!-- Icon from Remix Icon by Remix Design - https://github.com/cyberalien/RemixIcon/blob/master/License --><path fill="currentColor" d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2v2a8 8 0 1 0 5.135 1.865L15 8V2h6l-2.447 2.447A9.98 9.98 0 0 1 22 12"/>
+          </svg>
+      </button>
+      <button id="setting-btn" class="footer-pom-btns">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><!-- Icon from Remix Icon by Remix Design - https://github.com/cyberalien/RemixIcon/blob/master/License --><path fill="currentColor" d="m8.686 4l2.607-2.607a1 1 0 0 1 1.414 0L15.314 4H19a1 1 0 0 1 1 1v3.686l2.607 2.607a1 1 0 0 1 0 1.414L20 15.314V19a1 1 0 0 1-1 1h-3.686l-2.607 2.607a1 1 0 0 1-1.414 0L8.686 20H5a1 1 0 0 1-1-1v-3.686l-2.607-2.607a1 1 0 0 1 0-1.414L4 8.686V5a1 1 0 0 1 1-1zM12 15a3 3 0 1 0 0-6a3 3 0 0 0 0 6"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+    <!-- <div class="pom-btn-container">
       <button id="start-btn" class="btns">Start</button>
       <button id="stop-btn" class="btns" >Stop</button>
       <button id="resume-btn" class="btns">Resume</button>
       <button id="reset-btn" class="btns">Reset</button>
     </div>
-  </div>
+  </div> -->
 
 </body>
 </html>

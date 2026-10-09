@@ -260,30 +260,47 @@ h1 {
 }
 
 
-[data-tab-content] {
-  display: none;
-}
-.active[data-tab-content] {
-  display: block;
-}
 
-/* container */
+
+/* Pomodoro */
 .pom-container {
-  background-color: #FFF8F0;
   display: flex;
-  margin: 0 auto;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+
+  margin: 0 auto;
+  padding: 12px;
+
+  background-color: #FFF8F0;
   border-radius: 24px;
   border: 1px solid #4B2E2B;
   min-width: 400px;
   max-width: 700px;
+  min-height: 400px;
 }
 
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: 10px;
+  gap: 12px; 
+}
+.header-pom-btns {
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #8C5A3C;
+  color: #FFF8F0;
+  cursor: pointer;
+}
+
+.footer-pom-btns {
+  margin-top: auto;
+}
 
 /* tabs bar */
-.navbar {
+/* .navbar {
   width: 100%;
   height: 60px;
 
@@ -304,24 +321,27 @@ li {
 a {
   color: inherit;
   text-decoration: none;
+} */
+li {
+  list-style: none;
+
 }
 
 
-
 /* input box, pomodoro time and break time */
-input {
+/* input {
   width: 50px;
   height: 30px;
 }
 
 .unit{
   font-size: 2rem;
-}
+} */
 
 
 
 /* buttons */
-.btn-container {
+/* .btn-container {
   margin: 20px;
   display: flex;
   gap: 1rem;
@@ -343,4 +363,4 @@ input {
 }
 #resume-btn {
   display: none;
-}
+} */
